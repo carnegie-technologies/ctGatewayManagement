@@ -1,0 +1,35 @@
+{
+    "name": "@carnegietech/ct-gateway-management",
+    "author": "Carnegie Technologies",
+    "license": "Apache-2.0",
+    "description": "Gateway Management service",
+    "version": "1.0.0",
+    "bin": "./build/ct-gateway-management",
+    "engines": {
+        "node": "12.x"
+    },
+    "scripts": {
+        "dist-clean": "rimraf build/ coverage/",
+        "lint": "tslint --project tsconfig.lint.json -c tslint.json",
+        "compile": "tsc && cp src/ct-gateway-management build/",
+        "serve": "node build/main.js",
+        "start": "npm-run-all dist-clean lint compile serve"
+    },
+    "devDependencies": {
+        "@types/amqplib": "^0.5.1",
+        "@types/node": "^7.0.12",
+        "npm-run-all": "^4.0.2",
+        "rimraf": "^2.6.1",
+        "ts-node": "^4.1.0",
+        "tslint": "^5.20.0",
+        "tslint-eslint-rules": "^4.0.0",
+        "tslint-microsoft-contrib": "^6.2.0",
+        "typescript": "^3.6.2"
+    },
+    "dependencies": {
+        "amqplib": "^0.5.5",
+        "convict": "^4.0.0",
+        "express": "^4.15.2"
+    },
+    "files": ["build/**/*"]
+}
